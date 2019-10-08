@@ -3,9 +3,9 @@ const twilio = require('twilio');
 async function otpGenerator() {
     console.log('saassa')
     // Your Account SID from www.twilio.com/console
-    const accountSid = 'AC6c2f8f925afe53ad3080e681d9625aa0';
+    const accountSid = ACCOUNT_SID;
     // Your Auth Token from www.twilio.com/console
-    const authToken = '4d650b820c0c7177ed9501f50b13a054';
+    const authToken = AUTH_TOKEN;
 
     var client = new twilio(accountSid, authToken);
 
