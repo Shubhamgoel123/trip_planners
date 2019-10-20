@@ -3,8 +3,8 @@ const { generateOtp } = require('./generate_otp');
 
 function otpSender(phone) {
     const nexmo = new Nexmo({
-        apiKey: 'a788eafc',
-        apiSecret: 'lNITzeDTW9db8hxo',
+        apiKey: process.env.NEXMO_API_KEY,
+        apiSecret: process.env.NEXMO_API_SECRET,
     });
 
     otp = generateOtp();
