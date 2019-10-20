@@ -1,20 +1,19 @@
-const twilio = require('twilio');
+const Nexmo = require('nexmo');
+const { generateOtp } = require('./generate_otp');
 
-async function otpGenerator() {
-    console.log('saassa')
-    // Your Account SID from www.twilio.com/console
-    const accountSid = ACCOUNT_SID;
-    // Your Auth Token from www.twilio.com/console
-    const authToken = AUTH_TOKEN;
+function otpSender(phone) {
+    const nexmo = new Nexmo({
+        apiKey: 'a788eafc',
+        apiSecret: 'lNITzeDTW9db8hxo',
+    });
 
-    var client = new twilio(accountSid, authToken);
+    otp = generateOtp();
+    const from = 'Trip Planners';
+    const to = phone;
+    const text = 'Otp for Registration ' + otp;
 
-    client.messages.create({
-        body: 'Hello from Node',
-        to: '+919041626013',  // Text this number
-        from: '+915555555555' // From a valid Twilio number
-    })
-    .then((message) => console.log(message.sid));
+    nexmo.message.sendSms(from, to, text);
+    return otp;
 }
 
-exports.otpGenerator = otpGenerator;
+exports.otpSender = otpSender;
