@@ -4,7 +4,8 @@
   "description": "A platform for Trip Lovers.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,16 @@
   },
   "homepage": "https://github.com/Shubhamgoel123/trip_planners#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "joi-objectid": "^3.0.1",
     "mongoose": "^5.7.3",
-    "start": "^5.1.0"
+    "nexmo": "^2.5.1",
+    "nodemon": "^1.19.4",
+    "otp-generator": "^1.1.0",
+    "start": "^5.1.0",
+    "telesignsdk": "^2.2.1",
+    "twilio": "^3.35.1"
   }
 }
